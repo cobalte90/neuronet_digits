@@ -32,10 +32,12 @@ model.compile(
     metrics=['accuracy']
 )
 
+# Обучаем модель
 model.fit(X_train, y_train, batch_size=32, epochs=5, validation_split=0.2)
 print(model.evaluate(X_test, y_test))
 print(model.summary())
 
+# Проверям модель на цифрах из тестового множества
 n = 1
 x = np.expand_dims(X_test[n], axis=0)
 res = model.predict(x)
